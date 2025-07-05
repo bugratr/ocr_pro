@@ -1,0 +1,179 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  padding: 24px 0;
+  min-height: calc(100vh - 80px);
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.results-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.empty-state {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 60px 40px;
+  text-align: center;
+  height: fit-content;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.empty-state p {
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .control-panel {
+    order: 1;
+  }
+  
+  .results-panel {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-grid {
+    padding: 16px 0;
+    gap: 16px;
+  }
+  
+  .empty-state {
+    padding: 40px 24px;
+  }
+  
+  .empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  
+  .empty-state h3 {
+    font-size: 20px;
+  }
+  
+  .empty-state p {
+    font-size: 14px;
+  }
+}
+
+/* Loading Animation */
+.processing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.processing-modal {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.processing-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Hover Effects */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Focus States */
+button:focus,
+select:focus,
+input:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+  
+  .empty-state {
+    background: #2d3748;
+  }
+  
+  .empty-state h3 {
+    color: #e2e8f0;
+  }
+  
+  .btn-secondary {
+    background: #4a5568;
+    color: #e2e8f0;
+    border-color: #6c757d;
+  }
+} 

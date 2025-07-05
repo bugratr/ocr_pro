@@ -1,0 +1,258 @@
+.language-selector h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.selector-content {
+  margin-bottom: 24px;
+}
+
+.selector-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #495057;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.language-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.language-select:hover:not(:disabled) {
+  border-color: #667eea;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.language-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.selected-language-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.display-label {
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.display-value {
+  font-size: 13px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* Language Info */
+.language-info {
+  border-top: 1px solid #dee2e6;
+  padding-top: 20px;
+}
+
+.info-section {
+  margin-bottom: 20px;
+}
+
+.info-section h4 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-section li {
+  padding: 6px 0;
+  font-size: 13px;
+  color: #6c757d;
+  position: relative;
+  padding-left: 16px;
+}
+
+.info-section li::before {
+  content: '•';
+  color: #667eea;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Popular Languages */
+.popular-languages h4 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quick-select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.quick-btn {
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background: white;
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.quick-btn:hover:not(:disabled) {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.quick-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.quick-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .language-selector {
+    padding: 20px;
+  }
+  
+  .language-select {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  
+  .selected-language-display {
+    padding: 6px 10px;
+  }
+  
+  .display-label {
+    font-size: 11px;
+  }
+  
+  .display-value {
+    font-size: 12px;
+  }
+  
+  .info-section li {
+    font-size: 12px;
+    padding: 4px 0;
+  }
+  
+  .quick-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-select {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  
+  .info-section h4 {
+    font-size: 13px;
+  }
+  
+  .popular-languages h4 {
+    font-size: 13px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .language-selector h3 {
+    color: #e2e8f0;
+  }
+  
+  .selector-label {
+    color: #a0aec0;
+  }
+  
+  .language-select {
+    background: #4a5568;
+    border-color: #6c757d;
+    color: #e2e8f0;
+  }
+  
+  .language-select:disabled {
+    background: #2d3748;
+  }
+  
+  .selected-language-display {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.3);
+  }
+  
+  .display-value {
+    color: #90cdf4;
+  }
+  
+  .info-section h4,
+  .popular-languages h4 {
+    color: #e2e8f0;
+  }
+  
+  .info-section li {
+    color: #a0aec0;
+  }
+  
+  .quick-btn {
+    background: #4a5568;
+    border-color: #6c757d;
+    color: #e2e8f0;
+  }
+  
+  .quick-btn:hover:not(:disabled) {
+    background: rgba(102, 126, 234, 0.1);
+  }
+} 
